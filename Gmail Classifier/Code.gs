@@ -32,7 +32,7 @@ function isRejection(text) {
 };
 
 function isWorkRelated(text) {
-  var apiKey = "\AIzaSyCU-0vdVGw5v6WaI-lG3hHDQ0Wyr6mDX1k";
+  var apiKey = "";
   var apiEndpoint = 'https://language.googleapis.com/v1/documents:classifyText?key=' + apiKey;
   // Create our json request, w/ text, language, type & encoding
   var nlData = {
@@ -163,7 +163,7 @@ function removeExtraTrailingStuff(str) {
 function ibm() {
 
   text = "In the rugged Colorado Desert of California, there lies buried a treasure ship sailed there hundreds of years ago by either Viking or Spanish explorers. Some say this is legend; others insist it is fact";
-  var apiKey = "49u_7y7PMotveJ5WaklDI-0ItgG4C59s7evDn3gkrEjY";
+  var apiKey = "";
   var apiEndpoint = 'https://cloud.ibm.com/apidocs/natural-language-understanding?code=dotnet-standard#service-endpoint/v1/analyze?version=2020-08-01';
   // Create our json request, w/ text, language, type & encoding
   var nlData = {
@@ -213,7 +213,7 @@ function getML() {
     }
 
   };
-  var apiKey = {"web":{"client_id":"244337095539-fub54q1eirdv6db7pnff3ta3qmibfu25.apps.googleusercontent.com","project_id":"corona1-281000","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"wRmwytAB2kWGDqx-xvzDdOpd","redirect_uris":["http://www.google.com"]}};
+  var apiKey = {};
 
   var url = "https://automl.googleapis.com/v1/projects/244337095539/locations/us-central1/models/TCN912306579007602688:predict";
   var service = getService();
@@ -233,8 +233,6 @@ function getML() {
 //console.log("no")
 
 //  }
-  // api:2_oavZUrF6MPMN49XNh09N8ECkjZwb200VWRrvXV4u7R
-  //https://api.us-east.natural-language-understanding.watson.cloud.ibm.com/instances/33c5bcb8-fe87-45f6-89aa-9cbddb5e35a7
   var entities = response;
   console.log(response);
 
@@ -318,7 +316,7 @@ function ibmfunction(){
   }
 
   };
-  var apiKey = '2_oavZUrF6MPMN49XNh09N8ECkjZwb200VWRrvXV4u7R';
+  var apiKey = '';
   var url = "https://api.us-east.natural-language-understanding.watson.cloud.ibm.com/instances/33c5bcb8-fe87-45f6-89aa-9cbddb5e35a7/v1/analyze?version=2021-01-14";
   
  var response = UrlFetchApp.fetch(url, {
@@ -329,35 +327,9 @@ function ibmfunction(){
       "Authorization" : "Basic " + Utilities.base64Encode("apikey" + ":" + apiKey)
     }
   });
-  // api:2_oavZUrF6MPMN49XNh09N8ECkjZwb200VWRrvXV4u7R
+
   //https://api.us-east.natural-language-understanding.watson.cloud.ibm.com/instances/33c5bcb8-fe87-45f6-89aa-9cbddb5e35a7
   var entities = JSON.parse(response).entities;
   console.log(entities);
 };
 
-
-/*
-curl -X POST -u "apikey:{apikey}" --header "Content-Type: application/json" --data "{\"url\":\"http://newsroom.ibm.com/Guerbet-and-IBM-Watson-Health-Announce-Strategic-Partnership-for-Artificial-Intelligence-in-Medical-Imaging-Liver\",\"features\":{\"sentiment\":{},\"categories\":{},\"concepts\":{},\"entities\":{},\"keywords\":{}}}" "{url}/v1/analyze?version=2019-07-12"
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//curl -X POST -H "Content-Type: application/json" -u "apikey:{apikey}" -d @parameters.json "{url}/v1/analyze?version=2020-08-01"

@@ -97,7 +97,7 @@ function ibmfunction(text) {
     }
 
   };
-  var apiKey = '2_oavZUrF6MPMN49XNh09N8ECkjZwb200VWRrvXV4u7R';
+  var apiKey = '';
   var url = "https://api.us-east.natural-language-understanding.watson.cloud.ibm.com/instances/33c5bcb8-fe87-45f6-89aa-9cbddb5e35a7/v1/analyze?version=2021-01-14";
 
   var response = UrlFetchApp.fetch(url, {
@@ -108,7 +108,7 @@ function ibmfunction(text) {
       "Authorization": "Basic " + Utilities.base64Encode("apikey" + ":" + apiKey)
     }
   });
-  // api:2_oavZUrF6MPMN49XNh09N8ECkjZwb200VWRrvXV4u7R
+
   //https://api.us-east.natural-language-understanding.watson.cloud.ibm.com/instances/33c5bcb8-fe87-45f6-89aa-9cbddb5e35a7
   var entities = JSON.parse(response).entities;
   return entities
